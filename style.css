@@ -37,6 +37,7 @@ main {
     gap: 1rem;
     border-radius: .5rem;
     overflow: hidden;
+    height: 400px;
 }
 
 .right {
@@ -44,12 +45,12 @@ main {
 }
 
 .purple {
-    background-color: hsla(277, 54%, 31%, 0.6);
-    z-index: 1;
+    background-color: var(--accent);
     position: absolute;
     height: 400px;
     width: 500px;
-    margin-top: -404px;
+    border-bottom-right-radius: .5rem;
+    border-top-right-radius: .5rem;
 }
 
 picture,
@@ -58,12 +59,24 @@ img {
     height: 400px;
 }
 
+img {
+    opacity: 0.8;
+    mix-blend-mode: multiply;
+}
+
 .left {
     max-width: 350px;
     padding: 3rem;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: .5rem;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-block: 0;
 }
 
 .stats {
@@ -101,9 +114,15 @@ p {
 }
 
 @media (max-width: 500px) {
+
+    body {
+        overflow: auto;
+    }
+
     main {
         flex-direction: column-reverse;
         width: 300px;
+        height: unset;
         gap: 0;
     }
 
@@ -116,7 +135,8 @@ p {
     .purple {
         width: 300px;
         height: 220px;
-        margin-top: -224px;
+        border-bottom-right-radius: 0;
+        border-top-left-radius: .5rem;
     }
 
     .left {
